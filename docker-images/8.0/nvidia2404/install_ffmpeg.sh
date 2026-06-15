@@ -89,7 +89,7 @@ install_ffmpeg() {
 
     # Create pkgconfig directory and copy and modify pkgconfig files
     mkdir -p /usr/local/lib/pkgconfig
-    for pc in ${PREFIX}/lib/pkgconfig/libav*.pc ${PREFIX}/lib/pkgconfig/libpostproc.pc ${PREFIX}/lib/pkgconfig/kvazaar.pc ${PREFIX}/lib/pkgconfig/libsw*.pc ${PREFIX}/lib/${GNU_ARCH}/pkgconfig/libvmaf*; do
+    for pc in ${PREFIX}/lib/pkgconfig/libav*.pc ${PREFIX}/lib/pkgconfig/libpostproc.pc ${PREFIX}/lib/pkgconfig/kvazaar.pc ${PREFIX}/lib/pkgconfig/libsw*.pc ${PREFIX}/lib/pkgconfig/whisper.pc ${PREFIX}/lib/${GNU_ARCH}/pkgconfig/libvmaf*; do
         if [[ -f "$pc" ]]; then
             sed "s:${PREFIX}:/usr/local:g; s:/lib64:/lib:g" <"$pc" >/usr/local/lib/pkgconfig/"${pc##*/}"; \
         else
